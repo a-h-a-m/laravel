@@ -8,12 +8,14 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class RekapImport implements ToModel, WithHeadingRow
 {
-    private $bulan, $tahun;
+    private $bulan, $tahun, $testing;
+    public static $testData = [];
 
-    public function __construct(string $bulan, string $tahun)
+    public function __construct(string $bulan, string $tahun, bool $testing)
     {
         $this->bulan = $bulan;
         $this->tahun = $tahun;
+        $this->testing = $testing;
     }
 
     /**
@@ -25,7 +27,7 @@ class RekapImport implements ToModel, WithHeadingRow
     {
         if(!isset($row['nama_santri']))
             return;
-        return new Rekap([
+        $data = [
             'nama' => $row['nama_santri'],
             'kelas' => $row['kelas'],
             'tahun_pelajaran' => $this->tahun,
@@ -40,6 +42,10 @@ class RekapImport implements ToModel, WithHeadingRow
                     'wa2' => $row['no_whatsapp_2_jika_ada']
                 ]) : $row['no_whatsapp_1'],
             'status' => 'Belum dikirim',
-        ]);
+            ];
+        if($this->testing)
+            self::$testData[] = $data;
+        else
+            return new Rekap($data);
     }
 }

@@ -21,6 +21,7 @@ Auth::routes(['register' => false]);
 
 Route::middleware('auth')->group(function(){
     Route::inertia('/whatsapp', 'Dashboard/Whatsapp')->name('whatsapp');
+    Route::inertia('/admin/coba', 'Rekap/Test')->name('admin.coba');
     Route::post('/caption', [RekapController::class, 'postCaption']);
     Route::get('/caption', [RekapController::class, 'caption'])->name('admin.rekap.caption');
     Route::post('/selesai', [RekapController::class, 'finish']);

@@ -38,6 +38,7 @@ class HandleInertiaRequests extends Middleware
         return array_merge(parent::share($request), [
             'session' => [
                 'success' => fn () => $request->session()->get('success'),
+                'testing' => fn () => $request->session()->get('testing'),
             ],
             'waDeviceId' => env('WA_DEVICE_ID'),
             'waApiKey' => env('WA_API_KEY'),

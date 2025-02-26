@@ -6,7 +6,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- <title>Dashboard &mdash; HASPI</title> -->
-    <link rel="shortcut icon" href="{{ asset('assets/img/school.svg') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('assets/img/school.png') }}" type="image/x-icon">
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome/css/all.min.css') }}">
@@ -63,6 +63,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('admin.rekap.index') }}" class="nav-link"><i class="fas fa-paper-plane"></i><span>Kirim</span></a></li>
                                 <li><a href="{{ route('admin.rekap.caption') }}" class="nav-link"><i class="fas fa-clone"></i><span>Template</span></a></li>
+                                <li><a href="{{ route('admin.coba') }}" class="nav-link"><i class="fas fa-wrench"></i><span>Percobaan</span></a></li>
                             </ul>
                         </li>
                         @can('posts.index')

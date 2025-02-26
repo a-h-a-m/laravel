@@ -16,6 +16,7 @@ use ConvertApi\ConvertApi;
 class RekapController extends Controller
 {
     use HasPagination;
+    private $testData = [];
     /**
      * __construct
      *
@@ -114,6 +115,8 @@ class RekapController extends Controller
 
     public function store(Request $request)
     {
+        $testing = $request->input('test');
+        $isTest = ($testing=='true');
         $this->validate($request, [
             'file' => 'required|mimes:csv,xls,xlsx'
         ]);
@@ -122,7 +125,10 @@ class RekapController extends Controller
         $namaFile = $file->hashName();
         $file->storeAs('public/excel', $namaFile);
 
-        Excel::import(new RekapImport($request->input('bulan'), $request->input('tahun')), Storage::path('public/excel/'.$namaFile));
+        Excel::import(new RekapImport($request->input('bulan'), $request->input('tahun'), ($isTest)), Storage::path('public/excel/'.$namaFile));
+        if($isTest)
+            return redirect()->route('admin.coba')->with(['testing' => RekapImport::$testData]);
+
         $rekap = Rekap::where('bulan', $request->input('bulan'))
             ->where('tahun_pelajaran', $request->input('tahun'))
             ->get();
