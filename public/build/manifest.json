@@ -1,0 +1,242 @@
+{
+  "_CardBody-D85Lfz3B.js": {
+    "file": "assets/CardBody-D85Lfz3B.js",
+    "name": "CardBody",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_Pagination-4gKW2bS9.js": {
+    "file": "assets/Pagination-4gKW2bS9.js",
+    "name": "Pagination",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_Row-CSM74tWu.js": {
+    "file": "assets/Row-CSM74tWu.js",
+    "name": "Row",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_Search-D0Yg5BhP.js": {
+    "file": "assets/Search-D0Yg5BhP.js",
+    "name": "Search",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_SectionHeader-ByjmnWxZ.js": {
+    "file": "assets/SectionHeader-ByjmnWxZ.js",
+    "name": "SectionHeader",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "resources/js/Pages/Category/Index.jsx": {
+    "file": "assets/Index-CyXNsO3-.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Category/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Search-D0Yg5BhP.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/Pages/Dashboard/Index.jsx": {
+    "file": "assets/Index-Ds_P5K66.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Dashboard/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_Row-CSM74tWu.js"
+    ]
+  },
+  "resources/js/Pages/Dashboard/Whatsapp.jsx": {
+    "file": "assets/Whatsapp-bFecFlDE.js",
+    "name": "Whatsapp",
+    "src": "resources/js/Pages/Dashboard/Whatsapp.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_Row-CSM74tWu.js"
+    ]
+  },
+  "resources/js/Pages/Event/Index.jsx": {
+    "file": "assets/Index-BB0v0qn4.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Event/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Search-D0Yg5BhP.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/Pages/Permission/Index.jsx": {
+    "file": "assets/Index-lm4ksxZa.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Permission/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Search-D0Yg5BhP.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/Pages/Photo/Index.jsx": {
+    "file": "assets/Index-Ck-z6U4K.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Photo/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/Pages/Post/Index.jsx": {
+    "file": "assets/Index-DEzaAglv.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Post/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Search-D0Yg5BhP.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/Pages/Rekap/Caption.jsx": {
+    "file": "assets/Caption-CoNFgCT7.js",
+    "name": "Caption",
+    "src": "resources/js/Pages/Rekap/Caption.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js"
+    ]
+  },
+  "resources/js/Pages/Rekap/Create.jsx": {
+    "file": "assets/Create-Qk2F3wvf.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Rekap/Create.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js"
+    ]
+  },
+  "resources/js/Pages/Rekap/Index.jsx": {
+    "file": "assets/Index-COBQ5cEK.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Rekap/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/Pages/Slider/Index.jsx": {
+    "file": "assets/Index-CFe4RaXy.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Slider/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/Pages/Tag/Index.jsx": {
+    "file": "assets/Index-BO3EovSH.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Tag/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Search-D0Yg5BhP.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/Pages/User/Create.jsx": {
+    "file": "assets/Create-PMn3Rph9.js",
+    "name": "Create",
+    "src": "resources/js/Pages/User/Create.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Row-CSM74tWu.js"
+    ]
+  },
+  "resources/js/Pages/User/Index.jsx": {
+    "file": "assets/Index-DO7opzJ6.js",
+    "name": "Index",
+    "src": "resources/js/Pages/User/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/Pages/Video/Index.jsx": {
+    "file": "assets/Index-B-NoqFjv.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Video/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_SectionHeader-ByjmnWxZ.js",
+      "_CardBody-D85Lfz3B.js",
+      "_Search-D0Yg5BhP.js",
+      "_Pagination-4gKW2bS9.js"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-DxGV-Ihe.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Category/Index.jsx",
+      "resources/js/Pages/Dashboard/Index.jsx",
+      "resources/js/Pages/Dashboard/Whatsapp.jsx",
+      "resources/js/Pages/Event/Index.jsx",
+      "resources/js/Pages/Permission/Index.jsx",
+      "resources/js/Pages/Photo/Index.jsx",
+      "resources/js/Pages/Post/Index.jsx",
+      "resources/js/Pages/Rekap/Caption.jsx",
+      "resources/js/Pages/Rekap/Create.jsx",
+      "resources/js/Pages/Rekap/Index.jsx",
+      "resources/js/Pages/Slider/Index.jsx",
+      "resources/js/Pages/Tag/Index.jsx",
+      "resources/js/Pages/User/Create.jsx",
+      "resources/js/Pages/User/Index.jsx",
+      "resources/js/Pages/Video/Index.jsx"
+    ]
+  }
+}
