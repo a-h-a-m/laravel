@@ -126,8 +126,21 @@ class RekapController extends Controller
         $file->storeAs('public/excel', $namaFile);
 
         Excel::import(new RekapImport($request->input('bulan'), $request->input('tahun'), ($isTest)), Storage::path('public/excel/'.$namaFile));
-        if($isTest)
-            return redirect()->route('admin.coba')->with(['testing' => RekapImport::$testData]);
+        if($isTest) {
+            $testData = RekapImport::$testData;
+            $rekap = [];
+            foreach($testData as $td) {
+                $temp = new Rekap();
+                $temp->id = mt_rand(1000000000, 9999999999);
+                foreach($td as $key => $value)
+                    $temp->$key = $value;
+                $rekap[] = $temp;
+            }
+            $this->generateFiles($rekap);
+            $this->generatePdf($rekap);
+            
+            return redirect()->route('admin.coba')->with(['testing' => $rekap]);
+        }
 
         $rekap = Rekap::where('bulan', $request->input('bulan'))
             ->where('tahun_pelajaran', $request->input('tahun'))
