@@ -1,4 +1,4 @@
-Aplikasi Laravel
+Aplikasi sederhana untuk internal Pondok
 
 Tutorial install
 1. Clone repository
