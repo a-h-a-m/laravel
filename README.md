@@ -16,6 +16,7 @@ composer install
 php artisan migrate --seed
 ```
 jika muncul pertanyaan untuk membuat database baru, ketik 'yes'.
+
 6. Generate APP_KEY
 ```cmd
 php artisan key:generate
