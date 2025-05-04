@@ -103,7 +103,7 @@ class RekapController extends Controller
     private function generatePdf($data)
     {
         foreach($data as $dt) {
-        ConvertApi::setApiCredentials('secret_SA9SV0l1pYfLVdQU');
+        ConvertApi::setApiCredentials('secret_oMXBFSnIq2xJTMhV');
         $t = date('Y');
         $result = ConvertApi::convert('pdf', [
             'File' => __DIR__ . "/../../../../public/files/{$dt->bulan}-{$t}-{$dt->id}.docx",

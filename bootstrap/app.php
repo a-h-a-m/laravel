@@ -7,6 +7,7 @@ use Spatie\Permission\Middleware\RoleMiddleware;
 use Spatie\Permission\Middleware\PermissionMiddleware;
 use Spatie\Permission\Middleware\RoleOrPermissionMiddleware;
 use App\Http\Middleware\HandleInertiaRequests;
+use Symfony\Component\HttpFoundation\Response;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -25,5 +26,13 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        $exceptions->respond(function (Response $response) {
+            if ($response->getStatusCode() === 500) {
+                return back()->with([
+                    'error' => 'Mohon maaf terjadi kesalahan server. Baarakallahu fikum..',
+                ]);
+            }
+    
+            return $response;
+        });
     })->create();
