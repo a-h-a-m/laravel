@@ -68,10 +68,10 @@ class RekapController extends Controller
     public function download()
     {
         $bulan = getBulanSebelum($_GET['b']);
-        $spreadsheet = (new R())->load(__DIR__ . '/../../../../public/template.xlsx');
+        $spreadsheet = (new R())->load(__DIR__ . '/../../../../public/template-baru.xlsx');
         $value = $spreadsheet->getActiveSheet()->setCellValue('C1', $bulan);
         $writer = new W($spreadsheet);
-        $writer->save(__DIR__ . '/../../../../public/template.xlsx');
+        $writer->save(__DIR__ . '/../../../../public/template-baru.xlsx');
     }
 
     public function create()
