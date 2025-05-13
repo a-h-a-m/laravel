@@ -40,6 +40,7 @@ class HandleInertiaRequests extends Middleware
                 'error' => fn () => $request->session()->get('error'),
                 'success' => fn () => $request->session()->get('success'),
                 'testing' => fn () => $request->session()->get('testing'),
+                'bulan' => fn () => $request->session()->get('bulan'),
             ],
             'waDeviceId' => env('WA_DEVICE_ID'),
             'waApiKey' => env('WA_API_KEY'),

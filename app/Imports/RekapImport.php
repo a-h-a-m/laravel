@@ -8,12 +8,13 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class RekapImport implements ToModel, WithHeadingRow
 {
-    private $bulan, $tahun, $testing;
+    private $bulan, $bulanLalu, $tahun, $testing;
     public static $testData = [];
 
     public function __construct(string $bulan, string $tahun, bool $testing)
     {
         $this->bulan = $bulan;
+        $this->bulanLalu = getBulanSebelum($bulan);
         $this->tahun = $tahun;
         $this->testing = $testing;
     }
@@ -33,9 +34,14 @@ class RekapImport implements ToModel, WithHeadingRow
             'tahun_pelajaran' => $this->tahun,
             'bulan' => $this->bulan,
             'values' => json_encode([
-                'Ziyadah' => $row['ziyadah'],
-                'Total Juz yang telah disetorkan' => $row['total'],
-                'Juz Ujian Al-Qur\'an Bulanan' => $row['juz_ujian_bulanan'],
+                $this->bulanLalu => $row[strtolower($this->bulanLalu)],
+                'Hasil Tasmi\'' => $row['hasil_tasmi'],
+                'Catatan' => $row['catatan'],
+                'Kitabah' => $row['kitabah'],
+                'Ujian Imror' => $row['ujian_imror'],
+                'Ujian Dzikir' => $row['ujian_dzikir'],
+                'Hasil Akhir' => $row['hasil_akhir'],
+                'Tasmi\' Mutqin' => $row['tasmi_mutqin'],
             ]),
             'wa' => isset($row['no_whatsapp_2_jika_ada']) ? json_encode([
                     'wa1' => $row['no_whatsapp_1'], 

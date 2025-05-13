@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function(){
     Route::inertia('/admin/coba', 'Rekap/Test')->name('admin.coba');
     Route::post('/caption', [RekapController::class, 'postCaption']);
     Route::get('/caption', [RekapController::class, 'caption'])->name('admin.rekap.caption');
+    Route::get('/admin/rekap/download', [RekapController::class, 'download'])->name('admin.rekap.download');
     Route::post('/selesai', [RekapController::class, 'finish']);
 });
 

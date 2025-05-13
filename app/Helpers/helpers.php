@@ -29,3 +29,11 @@ if (! function_exists('TanggalID')) {
         return $parse->translatedFormat('l, d F Y');
     }
 }
+
+if (! function_exists('getBulanSebelum')) {         
+    
+    function getBulanSebelum($bulan) {
+        $bulanArray = ['Januari' => 'Desember', 'Februari' => 'Januari', 'Maret' => 'Februari', 'April' => 'Maret', 'Mei' => 'April', 'Juni' => 'Mei', 'Juli' => 'Juni', 'Agustus' => 'Juli', 'September' => 'Agustus', 'Oktober' => 'September', 'November' => 'Oktober', 'Desember' => 'November'];
+        return $bulanArray[$bulan];
+    }
+}

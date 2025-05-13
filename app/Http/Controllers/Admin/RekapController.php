@@ -12,6 +12,8 @@ use App\Imports\RekapImport;
 use Illuminate\Support\Facades\Storage;
 use PhpOffice\PhpWord\TemplateProcessor;
 use ConvertApi\ConvertApi;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx as R;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx as W;
 
 class RekapController extends Controller
 {
@@ -63,8 +65,18 @@ class RekapController extends Controller
         return redirect()->route('admin.rekap.caption')->with(['success' => 'Caption Berhasil Disimpan!']);
     }
 
+    public function download()
+    {
+        $bulan = getBulanSebelum($_GET['b']);
+        $spreadsheet = (new R())->load(__DIR__ . '/../../../../public/template.xlsx');
+        $value = $spreadsheet->getActiveSheet()->setCellValue('C1', $bulan);
+        $writer = new W($spreadsheet);
+        $writer->save(__DIR__ . '/../../../../public/template.xlsx');
+    }
+
     public function create()
     {
+        $this->download();
         return Inertia::render('Rekap/Create');
     }
 
@@ -78,21 +90,12 @@ class RekapController extends Controller
         $templateProcessor->setValue('tahun', date('Y'));
         
         $capaian = json_decode($dt->values, true);
-        
-        $values = [
-            [
-                'key' => 'Ziyadah',
-                'value' => $capaian['Ziyadah'] ?? 'Gagal',
-            ],
-            [
-                'key' => 'Total Juz yang telah disetorkan',
-                'value' => $capaian['Total Juz yang telah disetorkan'] ?? 'Gagal',
-            ],
-            [
-                'key' => 'Juz Ujian Al-Qur\'an Bulanan',
-                'value' => $capaian['Juz Ujian Al-Qur\'an Bulanan'] ?? 'Gagal',
-            ],
-        ];
+        $values = [];
+        foreach($capaian as $k => $v)
+            $values[] = [
+                'key' => $k,
+                'value' => $v ?? '',
+            ];
         
         $templateProcessor->cloneRowAndSetValues('key', $values);
         $t = date('Y');
@@ -139,7 +142,7 @@ class RekapController extends Controller
             $this->generateFiles($rekap);
             $this->generatePdf($rekap);
             
-            return redirect()->route('admin.coba')->with(['testing' => $rekap]);
+            return redirect()->route('admin.coba')->with(['testing' => $rekap, 'bulan' => $request->input('bulan')]);
         }
 
         $rekap = Rekap::where('bulan', $request->input('bulan'))
@@ -149,7 +152,7 @@ class RekapController extends Controller
         $this->generateFiles($rekap);
         $this->generatePdf($rekap);
 
-        return redirect()->route('admin.rekap.index')->with(['success' => 'Data Berhasil Disimpan!']);
+        return redirect()->route('admin.rekap.index')->with(['success' => 'Data Berhasil Disimpan!', 'bulan' => $request->input('bulan')]);
     }
 
     public function update(Request $request, Rekap $rekap)
